@@ -1,21 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import SearchScreen from "./src/screens/SearchScreen";
+const navigator = createStackNavigator(
+  {
+    //routes..has to have at least one screen
+    Search: SearchScreen,
   },
-});
+  {
+    initialRouteName: "Search",
+    defaultNavigationOptions: {
+      //options used for every screen
+      title: "Default Title...",
+    },
+  }
+);
+
+//creates a default react component and then displays whatever route
+export default createAppContainer(navigator);
