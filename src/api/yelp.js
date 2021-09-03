@@ -1,6 +1,5 @@
-import React from "react";
 import axios from "axios";
-const keys = require("../../config/keys");
+import keys from "../../config/keys";
 
 //details
 //"https://api.yelp.com/v3/businesses/{id}"
